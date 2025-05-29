@@ -1,6 +1,7 @@
-# Visual Studio
-.vs/
+# tooling/build folders
 bin/
 obj/
+.vs/
+packages/
 *.user
 *.suo
