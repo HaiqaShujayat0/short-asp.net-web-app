@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EmployeeCrudApp.Models.Employee>
+@{
+    ViewBag.Title = "Employees";
+}
+
+<h2>Employees</h2>
+
+<p>
+    @Html.ActionLink("Create New Employee", "Create")
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Salary</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var emp in Model)
+    {
+        <tr>
+            <td>@emp.Name</td>
+            <td>@emp.Position</td>
+            <td>@emp.Office</td>
+            <td>@emp.Salary</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = emp.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = emp.Id })
+            </td>
+        </tr>
+    }
+</table>
